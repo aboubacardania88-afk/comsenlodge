@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SENCOM-LODGE</title>
+    <style>
+        /* Style général */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* En-tête lumineux */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 3em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #00f;
+            text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #0ff;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #0ff; }
+            to { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #00f, 0 0 50px #00f; }
+        }
+
+        /* Section contact */
+        .contact-container {
+            background-color: rgba(0,0,0,0.6);
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffdd00;
+        }
+
+        .info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .info p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        /* Formulaire */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea, button {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            font-size: 1em;
+        }
+
+        input, textarea {
+            width: 100%;
+        }
+
+        textarea {
+            resize: none;
+            min-height: 120px;
+        }
+
+        button {
+            background-color: #00f;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0ff;
+            color: #000;
+        }
+
+        footer {
+            text-align: center;
+            margin: 50px 0;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                font-size: 2em;
+            }
+        }
+       nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 16px;
+            z-index: 30;
+            backdrop-filter: blur(6px);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .nav-links{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+    }
+    .nav-links a{
+      text-decoration:none;color:#fff;font-weight:bold;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover{color: #1f6feb;}
+        
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+      <a href="Index.html">Accueil</a>
+      <a href="culture.html">Culture</a>
+      <a href="reservation.html">Réservation</a>
+      <a href="pages/contact.html">Contact</a>
+    </div>
+    <header>COMSEN-LODGE</header>
+
+    <div class="contact-container">
+        <h2>Contactez-nous</h2>
+        <div class="info">
+            <p>📞 Gérante 1 : +221 77 837 38 88</p>
+            <p>📞 Gérante 2 : +262 78 384 38 80 </p>
+            <p>✉️ Email : contact@sencom-lodge.com</p>
+            <P>Siege a Dakar </P>
+        </div>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Votre nom" required>
+            <input type="email" id="email" placeholder="Votre email" required>
+            <textarea id="message" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p id="successMessage" style="color: #0f0; display:none; text-align:center; font-weight:bold;">Message envoyé avec succès !</p>
+    </div>
+
+    <footer>
+        &copy; 2025 COMSEN-LODGE. Tous droits réservés.
+    </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Récupération des valeurs
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Ici tu peux ajouter l'envoi à un serveur si nécessaire
+            console.log('Nom:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+
+            // Affiche le message de succès
+            successMessage.style.display = 'block';
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
